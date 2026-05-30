@@ -4,7 +4,7 @@ export default function HomeDashboard() {
   return (
     <div className="min-h-screen bg-[#0B0E14] p-6 flex flex-col items-center justify-center font-sans">
       
-      {/* গ্লাসমরফিজম ওয়ালেট কার্ড (Glassmorphism Wallet Card) */}
+      {/* গ্লাসমরফিজম oওয়ালেট কার্ড (Glassmorphism Wallet Card) */}
       <div className="w-full max-w-md relative p-8 rounded-[30px] border border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-2xl overflow-hidden">
         
         {/* পেছনের নিয়ন গ্লোয়িং ইফেক্ট (Background Glowing Effects) */}
