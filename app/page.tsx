@@ -42,9 +42,12 @@ export default function HomeDashboard() {
             </h1>
             
             <div className="flex gap-4 mt-2">
-              <button className="flex-1 bg-gradient-to-r from-[#00F0FF] to-[#0080FF] hover:from-[#33F3FF] hover:to-[#1A8CFF] text-black font-bold py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] active:scale-95">
-                Add Money
-              </button>
+              <Link href="/add-money" className="flex-1">
+  <button className="w-full bg-gradient-to-r from-[#00F0FF] to-[#0080FF] hover:from-[#33F3FF] hover:to-[#1A8CFF] text-black font-bold py-3.5 rounded-xl transition-all shadow-[0_0_20px_rgba(0,240,255,0.3)] active:scale-95">
+    Add Money
+  </button>
+</Link>
+
               <button className="flex-1 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 rounded-xl transition-all active:scale-95">
                 Transfer
               </button>
