@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 export default function HomeDashboard() {
   return (
     <div className="min-h-screen bg-[#0B0E14] text-white font-sans pb-32 relative overflow-x-hidden">
@@ -57,7 +57,10 @@ export default function HomeDashboard() {
       <div className="px-6 py-4 mt-2">
         <h3 className="text-sm font-semibold mb-4 text-gray-300 uppercase tracking-widest">Quick Services</h3>
         <div className="grid grid-cols-4 gap-4">
-          <ServiceItem icon="📱" label="Recharge" />
+          <Link href="/recharge">
+  <ServiceItem icon="📱" label="Recharge" />
+</Link>
+
           <ServiceItem icon="🌐" label="Internet" />
           <ServiceItem icon="💸" label="MFS" />
           <ServiceItem icon="📜" label="History" />
