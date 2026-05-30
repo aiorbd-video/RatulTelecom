@@ -2,13 +2,13 @@ import React from 'react';
 
 export default function HomeDashboard() {
   return (
-    <div className="min-h-screen bg-[#0B0E14] text-white font-sans pb-28 relative overflow-hidden">
+    <div className="min-h-screen bg-[#0B0E14] text-white font-sans pb-32 relative overflow-x-hidden">
       
       {/* Top Profile Bar */}
       <div className="flex justify-between items-center px-6 pt-8 pb-4">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#8A2BE2] to-[#00F0FF] p-[2px] shadow-[0_0_10px_rgba(138,43,226,0.5)]">
-            <div className="w-full h-full bg-[#0B0E14] rounded-full flex items-center justify-center">
+            <div className="w-full h-full bg-[#0B0E14] rounded-full flex items-center justify-center overflow-hidden">
               <span className="font-bold text-sm text-white">RH</span>
             </div>
           </div>
@@ -31,10 +31,8 @@ export default function HomeDashboard() {
 
           <div className="relative z-10">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-gray-400 text-xs font-semibold uppercase tracking-widest">
-                Wallet Balance
-              </h2>
-              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors">
+              <h2 className="text-gray-400 text-xs font-semibold uppercase tracking-widest">Wallet Balance</h2>
+              <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 flex items-center justify-center cursor-pointer">
                 <span className="text-white text-sm">👁️</span>
               </div>
             </div>
@@ -56,29 +54,80 @@ export default function HomeDashboard() {
       </div>
 
       {/* Quick Services Grid */}
-      <div className="px-6 py-6 mt-2">
-        <h3 className="text-sm font-semibold mb-5 text-gray-300 uppercase tracking-widest">Quick Services</h3>
+      <div className="px-6 py-4 mt-2">
+        <h3 className="text-sm font-semibold mb-4 text-gray-300 uppercase tracking-widest">Quick Services</h3>
         <div className="grid grid-cols-4 gap-4">
-          
           <ServiceItem icon="📱" label="Recharge" />
           <ServiceItem icon="🌐" label="Internet" />
-          <ServiceItem icon="💸" label="MFS Transfer" />
+          <ServiceItem icon="💸" label="MFS" />
           <ServiceItem icon="📜" label="History" />
           <ServiceItem icon="🎁" label="Offers" />
           <ServiceItem icon="👑" label="VIP" />
           <ServiceItem icon="📞" label="Support" />
           <ServiceItem icon="⚙️" label="More" />
+        </div>
+      </div>
 
+      {/* NEW: Quick Recharge Favorites */}
+      <div className="px-6 py-2">
+        <h3 className="text-sm font-semibold mb-4 text-gray-300 uppercase tracking-widest">Quick Recharge</h3>
+        <div className="flex gap-5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
+          
+          <div className="flex flex-col items-center gap-2 cursor-pointer flex-shrink-0">
+            <div className="w-14 h-14 rounded-full border-2 border-[#00F0FF] p-[2px]">
+              <div className="w-full h-full bg-white/10 rounded-full flex items-center justify-center text-xl">👨</div>
+            </div>
+            <span className="text-xs text-gray-400">Abbu</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-2 cursor-pointer flex-shrink-0">
+            <div className="w-14 h-14 rounded-full border-2 border-[#8A2BE2] p-[2px]">
+              <div className="w-full h-full bg-white/10 rounded-full flex items-center justify-center text-xl">👩</div>
+            </div>
+            <span className="text-xs text-gray-400">Ammu</span>
+          </div>
+
+          <div className="flex flex-col items-center gap-2 cursor-pointer flex-shrink-0">
+            <div className="w-14 h-14 rounded-full border border-dashed border-white/30 flex items-center justify-center text-2xl text-white/50 hover:border-[#00F0FF] hover:text-[#00F0FF] transition-colors">
+              +
+            </div>
+            <span className="text-xs text-gray-400">Add New</span>
+          </div>
+        </div>
+      </div>
+
+      {/* NEW: Promotional Offer Slider */}
+      <div className="px-6 py-4 mt-2">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-widest">Special Offers</h3>
+          <span className="text-[#00F0FF] text-xs font-semibold cursor-pointer">See All</span>
+        </div>
+        
+        <div className="flex gap-4 overflow-x-auto snap-x pb-4" style={{ scrollbarWidth: 'none' }}>
+          {/* Banner 1 */}
+          <div className="min-w-[280px] h-36 bg-gradient-to-br from-[#8A2BE2]/40 to-[#00F0FF]/20 rounded-2xl p-5 relative overflow-hidden border border-white/10 snap-center flex-shrink-0">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+            <h4 className="text-white font-bold text-xl mb-1">50% Cashback!</h4>
+            <p className="text-white/70 text-xs mb-4">On first bKash add money.</p>
+            <button className="bg-white text-black text-xs font-bold px-5 py-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:scale-105 transition-transform">Claim Now</button>
+          </div>
+
+          {/* Banner 2 */}
+          <div className="min-w-[280px] h-36 bg-gradient-to-br from-[#FF007A]/40 to-[#7928CA]/20 rounded-2xl p-5 relative overflow-hidden border border-white/10 snap-center flex-shrink-0">
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-5 -mb-5 blur-xl"></div>
+            <h4 className="text-white font-bold text-xl mb-1">50 GB Internet</h4>
+            <p className="text-white/70 text-xs mb-4">Only at ৳399 for 30 Days.</p>
+            <button className="bg-white text-black text-xs font-bold px-5 py-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:scale-105 transition-transform">Buy Now</button>
+          </div>
         </div>
       </div>
 
       {/* Floating Bottom Navigation Bar */}
-      <div className="fixed bottom-6 left-6 right-6">
-        <div className="bg-white/[0.05] backdrop-blur-2xl border border-white/10 rounded-3xl p-2 px-6 flex justify-between items-center shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+      <div className="fixed bottom-6 left-6 right-6 z-50">
+        <div className="bg-[#0B0E14]/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-2 px-6 flex justify-between items-center shadow-[0_10px_40px_rgba(0,0,0,0.8)]">
           <NavItem icon="🏠" label="Home" active />
           <NavItem icon="📊" label="History" />
           
-          {/* Center Scan FAB */}
           <div className="relative -top-6">
             <div className="w-16 h-16 rounded-full bg-gradient-to-b from-[#00F0FF] to-[#0080FF] flex items-center justify-center shadow-[0_0_20px_rgba(0,240,255,0.4)] cursor-pointer hover:scale-105 transition-transform border-4 border-[#0B0E14]">
               <span className="text-2xl">📷</span>
@@ -94,7 +143,6 @@ export default function HomeDashboard() {
   );
 }
 
-// Reusable Service Icon Component
 function ServiceItem({ icon, label }: { icon: string, label: string }) {
   return (
     <div className="flex flex-col items-center gap-2 cursor-pointer group">
@@ -106,16 +154,11 @@ function ServiceItem({ icon, label }: { icon: string, label: string }) {
   );
 }
 
-// Reusable Bottom Nav Icon Component
 function NavItem({ icon, label, active = false }: { icon: string, label: string, active?: boolean }) {
   return (
     <div className="flex flex-col items-center gap-1 cursor-pointer p-2">
-      <span className={`text-xl ${active ? 'drop-shadow-[0_0_8px_#00F0FF]' : 'opacity-60'}`}>
-        {icon}
-      </span>
-      <span className={`text-[10px] ${active ? 'text-[#00F0FF] font-semibold' : 'text-gray-500'}`}>
-        {label}
-      </span>
+      <span className={`text-xl ${active ? 'drop-shadow-[0_0_8px_#00F0FF]' : 'opacity-60'}`}>{icon}</span>
+      <span className={`text-[10px] ${active ? 'text-[#00F0FF] font-semibold' : 'text-gray-500'}`}>{label}</span>
     </div>
   );
 }
